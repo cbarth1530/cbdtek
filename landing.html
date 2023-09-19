@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* CSS styles go here */
+        body {
+            background-image: url('media/background-image.png'); /* Update with the path to your body background image in the "media" folder */
+            background-repeat: repeat;
+            color: #fff;
+        }
+
+        .card {
+            margin-top: 20px;
+            padding: 20px;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.5); /* Dimmed transparent background */
+        }
+
+        #json-data {
+            background-image: url('media/leaves-background.png'); /* Update with the path to your leaves background image in the "media" folder */
+            background-repeat: repeat;
+        }
+
+        .field {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .green {
+            color: #00FF00;
+        }
+
+        .red {
+            color: #FF0000;
+        }
+    </style>
+    <title>Landing Page</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="media/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+                Your Logo
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">lnurl-auth</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Create Wallet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ChaletLavy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="json-data" class="card">
+                    <!-- Data will be inserted here using JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript code goes here
+        document.addEventListener("DOMContentLoaded", function () {
+            const jsonDataDiv = document.getElementById('json-data');
+            // Your previous JavaScript code for fetching and displaying data goes here
+        });
+    </script>
+</body>
+</html>

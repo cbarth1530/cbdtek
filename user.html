@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Detail Page</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS for styling -->
+    <style>
+        /* Add your custom styles here */
+        body {
+            background-color: #1E1E1E;
+            color: #FFF;
+        }
+        .navbar {
+            background-color: #343a40;
+        }
+        .navbar-dark .navbar-toggler-icon {
+            background-color: #FFF;
+        }
+        .navbar-dark .navbar-toggler-icon:focus {
+            outline: none;
+        }
+        .navbar-dark .navbar-toggler {
+            border: none;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: #FFF;
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #FFD700;
+        }
+        .navbar-dark .navbar-brand {
+            color: #FFF;
+        }
+        .navbar-dark .navbar-brand:hover {
+            color: #FFD700;
+        }
+        .user-card {
+            margin: 20px;
+            padding: 20px;
+            background-color: #343a40;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-bolt"></i> <!-- Font Awesome lightning bolt icon -->
+            Lightning
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="paywalls.html">Paywalls</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="users.html">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="join.html">Join</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- User details container -->
+<div class="container mt-4">
+    <!-- User details will be dynamically generated here -->
+    <div class="user-card">
+        <h3>User Details</h3>
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Email:</strong> johndoe@example.com</p>
+        <p><strong>Balance:</strong> $1000.00</p>
+        <p><strong>Wallet ID:</strong> 33b5bb8eb6df493b9616d0c1949907c1</p>
+        <p><strong>Invoice/Read Key:</strong> 6a25213901624e33aab5610826f14220</p>
+        <p><strong>TPoS URL:</strong> <a href="https://legend.lnbits.com/tpos/hxK7QhAhiGY54CmCV9gtPF" target="_blank">Open Cash Register</a></p>
+    </div>
+</div>
+
+<!-- Include Bootstrap and jQuery scripts at the end for faster page loading -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Updated jQuery version -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
