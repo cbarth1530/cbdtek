@@ -1,0 +1,59 @@
+/* styles.css */
+body {
+    color: #fff;
+    transition: background-color 0.5s;
+}
+
+.card {
+    margin-top: 20px;
+    padding: 20px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Dimmed transparent background */
+}
+
+.field {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.green {
+    color: #00FF00;
+}
+
+.red {
+    color: #FF0000;
+}
+
+/* Day-Night Switch Styles */
+.theme-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-switch-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sun-icon,
+.moon-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+/* Add more background images as needed */
+body.light-theme {
+    background-image: url('media/bg-light.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body.dark-theme {
+    background-image: url('media/bg-dark.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

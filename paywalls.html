@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paywalls Page</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to FontAwesome CSS (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Custom CSS for styling -->
+    <style>
+        /* Add your custom styles here */
+        body {
+            background-color: #1E1E1E;
+            color: #FFF;
+        }
+        .navbar {
+            background-color: #343a40;
+        }
+        .navbar-dark .navbar-toggler-icon {
+            background-color: #FFF;
+        }
+        .navbar-dark .navbar-toggler-icon:focus {
+            outline: none;
+        }
+        .navbar-dark .navbar-toggler {
+            border: none;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: #FFF;
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #FFD700;
+        }
+        .navbar-dark .navbar-brand {
+            color: #FFF;
+        }
+        .navbar-dark .navbar-brand:hover {
+            color: #FFD700;
+        }
+        .paywall-card {
+            margin-bottom: 20px;
+            background-color: #343a40;
+            color: #FFF;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .paywall-icon {
+            font-size: 24px; /* Adjust the icon size as needed */
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-bolt"></i> <!-- Font Awesome lightning bolt icon -->
+            Lightning
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Wallet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="paywalls.html">Paywalls</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="users.html">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="join.html">Join</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Paywall cards container -->
+<div class="container mt-4">
+    <div class="row" id="paywall-cards">
+        <!-- Paywall cards will be dynamically generated here -->
+    </div>
+</div>
+
+<!-- Include Bootstrap and jQuery scripts at the end for faster page loading -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Updated jQuery version -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Make API request to fetch paywall data
+        $.ajax({
+            type: "GET",
+            url: "https://legend.lnbits.com/paywall/api/v1/paywalls",
+            headers: {
+                'X-Api-Key': 'b7bd51a264d246f185d56fcb1ff5f1c0'
+            },
+            success: function (data) {
+                // Process and display paywall data
+                if (data && data.length > 0) {
+                    data.forEach(function (paywall) {
+                        // Create a paywall card for each paywall
+                        var paywallCard = '<div class="col-lg-4"><div class="paywall-card">';
+                        paywallCard += '<i class="fas fa-shopping-cart paywall-icon"></i>'; // Paywall icon
+                        paywallCard += '<h4>' + paywall.title + '</h4>';
+                        paywallCard += '<p>Description: ' + paywall.description + '</p>';
+                        paywallCard += '<p>Price: $' + paywall.price + '</p>';
+                        paywallCard += '</div></div>';
+
+                        // Append the paywall card to the container
+                        $('#paywall-cards').append(paywallCard);
+                    });
+                } else {
+                    // Handle empty or no data
+                    $('#paywall-cards').html('<p>No paywalls found.</p>');
+                }
+            },
+            error: function (error) {
+                // Handle error
+                console.error(error);
+                $('#paywall-cards').html('<p>Error loading paywalls.</p>');
+            }
+        });
+    });
+</script>
+</body>
+</html>
